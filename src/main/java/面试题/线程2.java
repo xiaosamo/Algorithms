@@ -1,7 +1,5 @@
 package 面试题;
 
-import kotlin.jvm.Synchronized;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;

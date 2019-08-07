@@ -1,5 +1,7 @@
 package 面试题;
 
+import leetcode.ListNode;
+
 /**
  * @author yuanshijia
  * @date 2019-07-22

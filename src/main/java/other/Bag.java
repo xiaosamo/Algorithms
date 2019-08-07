@@ -1,7 +1,5 @@
 package other;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -50,7 +48,6 @@ public class Bag<Item> implements Iterable<Item>{
     }
 
 
-    @NotNull
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator<>(first);
