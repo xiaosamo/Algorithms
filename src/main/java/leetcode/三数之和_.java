@@ -1,3 +1,5 @@
+package leetcode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -5,6 +7,7 @@ import java.util.List;
 import static java.util.Arrays.binarySearch;
 
 /**
+ * 适用于不重复的数据
  * @author yuanshijia
  * @date 2019-08-14
  * @description
@@ -31,10 +34,39 @@ public class 三数之和_ {
         return result;
     }
 
+    /**
+     * 双指针
+     * 同样不适用与数组存在重复元素的情况。
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        int n = nums.length;
+        for (int i = 0; i < n - 2; i++) {
+            int l = i + 1, r = n - 1;
+            while (l < r) {
+                int sum = nums[i] + nums[l] + nums[r];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    ++l;
+                    --r;
+                } else if (sum > 0) {
+                    --r;
+                } else {
+                    ++l;
+                }
+            }
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         三数之和_ obj = new 三数之和_();
-        List<List<Integer>> lists = obj.threeSum(new int[]{-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = obj.threeSum2(new int[]{-1, 0, 1, 2, 5, -7});
+        
         for (List<Integer> list : lists) {
             list.forEach(i -> System.out.print(i + " "));
             System.out.println();
