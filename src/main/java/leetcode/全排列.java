@@ -12,9 +12,10 @@ public class 全排列 {
     public List<List<Integer>> permute(int[] nums) {
         boolean[] vis = new boolean[nums.length];
         dfs(nums, vis, new ArrayList<>());
-
         return result;
     }
+
+
 
     private void dfs(int[] nums, boolean[] vis, List<Integer> cur) {
         if (cur.size() == nums.length) {

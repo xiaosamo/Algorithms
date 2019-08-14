@@ -15,7 +15,7 @@ public class 三数之和 {
                 int t = -(nums[i] + nums[j]);
                 int result = Arrays.binarySearch(nums, t);
                 if (result > 0 && result != i && result != j) {
-                    List<Integer> list = Arrays.asList(new Integer[]{nums[i], nums[j], t});
+                    List<Integer> list = Arrays.asList(nums[i], nums[j], t);
                     Collections.sort(list);
                     if (!ans.contains(list)) {
                         ans.add(list);
@@ -26,6 +26,12 @@ public class 三数之和 {
         return ans;
     }
 
+    /**
+     * 双指针
+     * 需要处理重复的数字
+     * @param nums
+     * @return
+     */
     public static List<List<Integer>> threeSum2(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -38,7 +44,7 @@ public class 三数之和 {
             while (l < r) {
                 int sum = nums[l] + nums[r] + nums[i];
                 if (sum == 0) {
-                    result.add(Arrays.asList(new Integer[]{nums[i], nums[l], nums[r]}));
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
                     while (l < r && nums[l] == nums[l + 1]) ++l;
                     while (l < r && nums[r] == nums[r - 1]) --r;
                     --r;
