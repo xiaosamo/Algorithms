@@ -1,6 +1,5 @@
 package 基础练习;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -90,7 +89,6 @@ public class Stack<Item> implements Iterable<Item> {
         return s.toString();
     }
 
-    @NotNull
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator<>(first);

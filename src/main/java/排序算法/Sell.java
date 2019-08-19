@@ -10,6 +10,7 @@ public class Sell {
     public static void sort(Comparable []a) {
         int N = a.length;
         int h = 1;
+        // 1, 4, 13, 40, ...
         while (h < N / 3) {
             h = h * 3 + 1;
         }

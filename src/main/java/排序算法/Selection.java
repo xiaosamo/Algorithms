@@ -1,5 +1,8 @@
 package 排序算法;
 
+import static 排序算法.Example.less;
+import static 排序算法.Example.swap;
+
 /**
  * @author yuan
  * @date 2019/2/22
@@ -20,15 +23,6 @@ public class Selection {
         }
     }
 
-    private static boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
-    }
-
-    private static void swap(Comparable[] a, int i, int j) {
-        Comparable temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-    }
 
 
 }

@@ -11,7 +11,19 @@ import java.util.concurrent.ConcurrentHashMap;
  * @description
  */
 public class Example {
-    private static void show(Comparable[] a) {
+
+
+    public static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
+    public static void swap(Comparable[] a, int i, int j) {
+        Comparable temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    public static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

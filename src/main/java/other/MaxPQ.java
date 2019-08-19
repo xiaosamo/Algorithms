@@ -31,6 +31,7 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     /**
      * 插入元素
+     * 将新元素加到数组末尾，增加堆大小并让这个新元素上浮到合适的位置
      * @param key
      */
     public void insert(Key key) {
@@ -43,6 +44,7 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     /**
      * 删除最大元素
+     * 从数组顶端删去最大的元素并将数组的最后一个元素放到顶端，减小堆的大小并让这个元素下沉到合适的位置
      * @return
      */
     public Key delMax(){
