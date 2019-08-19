@@ -28,6 +28,13 @@ public class Heap {
         }
     }
 
+    /**
+     * 下沉
+     * 当一个节点比子节点来得小，也需要不断地向下进行比较和交换操作，把这种操作称为下沉。一个节点如果有两个子节点，应当与两个子节点中最大那个节点进行交换。
+     * @param a
+     * @param k
+     * @param n
+     */
     private static void sink(Comparable[] a, int k, int n) {
         while (2 * k <= n) {
             int j = 2 * k;

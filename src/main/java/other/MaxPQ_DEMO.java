@@ -1,76 +1,58 @@
 package other;
 
-
 /**
- * @author yuan
- * @date 2019/2/24
- * @description 基于堆的优先队列
+ * @author yuanshijia
+ * @date 2019-08-19
+ * @description
  */
-public class MaxPQ<Key extends Comparable<Key>> {
-    /**
-     * 存放数据的数组
-     */
+public class MaxPQ_DEMO<Key extends Comparable<Key>> {
     private Key[] pq;
-    /**
-     * 队列大小
-     */
-    private int N = 0;
+    private int N;
 
-    public MaxPQ(int maxN){
+    public MaxPQ_DEMO(int maxN) {
         // pq[1]为最大元素，pq[0]未使用
         pq = (Key[]) new Comparable[maxN + 1];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return N == 0;
     }
 
-    public int size(){
+    public int size() {
         return N;
     }
 
-    /**
-     * 插入元素
-     * @param key
-     */
     public void insert(Key key) {
-        // 将元素先放入到数组最后
         pq[++N] = key;
-        // 恢复堆的有序性
         swim(N);
+
     }
 
-
     /**
-     * 删除最大元素
+     * 从数组顶端删除最大的元素，并将数组的最后一个元素放到顶端，并让这个元素下沉到合适的位置。
      * @return
      */
-    public Key delMax(){
-        // 从根节点得到最大元素
+    public Key delMax() {
         Key max = pq[1];
-        // 将其和最后一个节点交换
-        exch(1, N--);
-        // 设置为null，让系统回收空间
+        swap(1, N--);
         pq[N + 1] = null;
-        // 恢复堆的有序性
         sink(1);
         return max;
     }
 
     /**
-     * 由下至上的堆有序化（上浮）
+     * 上浮
      * @param k
      */
     private void swim(int k) {
         while (k > 1 && less(k / 2, k)) {
-            exch(k / 2, k);
+            swap(k / 2, k);
             k /= 2;
         }
-
     }
 
     /**
-     * 由上至下的堆有序化（下沉）
+     * 下沉
      * @param k
      */
     private void sink(int k) {
@@ -82,16 +64,16 @@ public class MaxPQ<Key extends Comparable<Key>> {
             if (!less(k, j)) {
                 break;
             }
-            exch(k, j);
+            swap(k, j);
             k = j;
         }
     }
 
-    private  boolean less(int i, int j) {
+    private boolean less(int i, int j) {
         return pq[i].compareTo(pq[j]) < 0;
     }
 
-    private void exch(int i, int j) {
+    private void swap(int i, int j) {
         Key t = pq[i];
         pq[i] = pq[j];
         pq[j] = t;

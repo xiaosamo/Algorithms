@@ -1,5 +1,7 @@
 package 排序算法;
 
+import java.util.Arrays;
+
 /**
  * @author yuan
  * @date 2019/2/23
@@ -68,4 +70,10 @@ public class Merge {
         return v.compareTo(w) < 0;
     }
 
+
+    public static void main(String[] args) {
+        Integer[] a = new Integer[]{4, -1, 0, 5, 3, 1, 2, 9};
+        sort(a);
+        System.out.println(Arrays.toString(a));
+    }
 }
