@@ -3,7 +3,7 @@ package 排序算法;
 /**
  * @author yuan
  * @date 2019/2/23
- * @description 插入排序，使用哨兵避免判断边界
+ * @description InsertionSort，使用哨兵避免判断边界
  */
 public class InsertionX {
     public static void sort(Comparable []a) {
