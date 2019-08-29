@@ -40,7 +40,6 @@ public class 二叉树的前序遍历 {
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 list.add(root.val);
-//                System.out.println(root.val);
                 stack.push(root);
                 root = root.left;
             }

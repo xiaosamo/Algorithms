@@ -11,7 +11,6 @@ import java.util.Arrays;
  */
 public class HeapSort {
     public static void sort(Comparable[] a) {
-
         int n = a.length;
         // 从非叶子节点开始，构建最大堆
         for (int i = n / 2; i >= 1; i--) {

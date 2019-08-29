@@ -25,14 +25,14 @@ public class 二叉树遍历 {
      */
     public  void insert(TreeNode root, int val) {
         if (val > root.val) {
-            // 右节点比根节点大
+            // 在右边插入，右节点比根节点大
             if (root.right != null) {
                 insert(root.right, val);
             } else {
                 root.right = new TreeNode(val);
             }
         } else {
-            // 左节点比根节点小
+            // 在左边插入，左节点比根节点小
             if (root.left != null) {
                 insert(root.left, val);
             } else {
@@ -80,7 +80,7 @@ public class 二叉树遍历 {
 
     /**
      * 先序遍历，非递归
-     * 手算的思想，边访问边找，找到最左下方的，然后向上再向访问右边的
+     * 手算的思想，边访问边找，找到最左下方的，然后向上退一步再访问右边的
      */
     public  void preOrder2(TreeNode node){
         Stack<TreeNode> stack = new Stack<>();
@@ -242,75 +242,33 @@ public class 二叉树遍历 {
 
 
     public static void main(String[] args) {
-
         二叉树遍历 obj = new 二叉树遍历();
 
-//        obj.test(obj);
-        obj.test2(obj);
-
-
+        obj.test(obj);
     }
 
     private void test(二叉树遍历 obj){
-        int[] a = {12, 76, 35, 22, 16, 48, 90, 46, 9, 40};
+        int[] a = {48, 35, 76, 90, 22, 16, 12, 46, 18, 40};
         TreeNode root = new TreeNode(a[0]);
 
         for (int i = 1; i < a.length; i++) {
             obj.insert(root, a[i]);
         }
-        obj.preOrder(root);
-        System.out.println();
+
+        System.out.println("\n先序遍历结果：");
         obj.preOrder2(root);
-        System.out.println();
 
-        //        levelOrder(root);
-//        InOrder(root);
+        System.out.println("\n中序遍历结果：");
+        obj.InOrder2(root);
 
-//        System.out.println("二叉树的深度为：" + deep(root));
+        System.out.println("\n后序遍历结果：");
+        obj.PostOrder2(root);
+
+        System.out.println("\n层次遍历结果：");
+        levelOrder(root);
+
+        System.out.println("\n二叉树的深度为：" + deep(root));
 //        sum(root);
-    }
-
-    private void test2(二叉树遍历 obj) {
-        //构造树结构测试用
-        TreeNode a = new TreeNode(1);
-        TreeNode b = new TreeNode(2);
-        TreeNode c = new TreeNode(3);
-        TreeNode d = new TreeNode(4);
-        TreeNode e = new TreeNode(5);
-        TreeNode f = new TreeNode(6);
-        TreeNode g = new TreeNode(7);
-        a.left = b;
-        a.right = c;
-        b.right = d;
-        c.left = e;
-        c.right = f;
-        f.left = g;
-
-        // 先序
-        obj.preOrder(a);
-        System.out.println();
-        obj.preOrder2(a);
-        System.out.println();
-        obj.preOrder3(a);
-        System.out.println();
-
-        // 中序
-        System.out.println();
-        obj.InOrder(a);
-        System.out.println();
-        obj.InOrder2(a);
-        System.out.println();
-
-
-        // 后序
-        System.out.println();
-        obj.PostOrder(a);
-        System.out.println();
-        obj.PostOrder2(a);
-
-
-
-
     }
 
 }
