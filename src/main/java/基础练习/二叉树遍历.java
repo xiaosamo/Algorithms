@@ -7,7 +7,6 @@ import java.util.Stack;
 
 public class 二叉树遍历 {
 
-
     static class TreeNode {
         int val;
         TreeNode left;
@@ -76,7 +75,6 @@ public class 二叉树遍历 {
             System.out.print(node.val + " ");
         }
     }
-
 
     /**
      * 先序遍历，非递归

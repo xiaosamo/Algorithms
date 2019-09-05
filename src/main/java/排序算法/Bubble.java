@@ -23,12 +23,23 @@ public class Bubble {
         }
     }
 
+    public static void sort2(Comparable []a) {
+        int n = a.length;
+        for (int i = n - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (less(a[j + 1], a[j])) {
+                    swap(a, j + 1, j);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Bubble bubble = new Bubble();
         Integer[] a = {1, 5, 6, 3, 1, 3, 5, 6, 9, 7, 10, -1, -2, 0};
         Integer[] b = {10};
-        sort(a);
-        sort(b);
+        sort2(a);
+        sort2(b);
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
 
