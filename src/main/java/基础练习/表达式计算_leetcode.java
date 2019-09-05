@@ -16,7 +16,6 @@ public class 表达式计算_leetcode {
      */
     public int calculate(String s) {
 
-
         Stack<Character> opes = new Stack<>(); // 操作符栈
         Stack<Integer> nums = new Stack<>(); // 数字栈
 
@@ -115,14 +114,12 @@ public class 表达式计算_leetcode {
     }
 
     public static void main(String[] args) {
-//        String s = "1-2+3*(4-5)";
-        Scanner in = new Scanner(System.in);
-        String s = in.nextLine();
+        String s = "1-2+3*(4-5)";
+//        Scanner in = new Scanner(System.in);
+//        String s = in.nextLine();
 
         表达式计算_leetcode obj = new 表达式计算_leetcode();
         System.out.println(obj.calculate(s));
-
-
 
 
     }
