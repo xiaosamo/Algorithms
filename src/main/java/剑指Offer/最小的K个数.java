@@ -62,7 +62,8 @@ public class 最小的K个数 {
     public static void main(String[] args) {
         最小的K个数 obj = new 最小的K个数();
 //        ArrayList<Integer> list = obj.GetLeastNumbers_Solution(new int[]{4, 5, 1, 6, 2, 7, 3, 8}, 4);
-        ArrayList<Integer> list = obj.GetLeastNumbers_Solution(new int[]{1}, 1);
+//        ArrayList<Integer> list = obj.GetLeastNumbers_Solution(new int[]{1}, 1);
+        ArrayList<Integer> list = obj.GetLeastNumbers_Solution(new int[]{1,2,3,4,5}, 3);
         list.forEach(i -> System.out.print(i + " "));
 
     }

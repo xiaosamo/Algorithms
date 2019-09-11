@@ -8,7 +8,7 @@ package 面试题;//package 面试题;
 // * @date 2019/4/13
 // * @description
 // */
-//public class Main2 {
+//public class Main3 {
 //
 //    public static void main(String[] args) {
 //        Scanner in = new Scanner(System.in);
