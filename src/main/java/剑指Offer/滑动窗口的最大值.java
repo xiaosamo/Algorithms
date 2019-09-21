@@ -1,6 +1,8 @@
 package 剑指Offer;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /**
  * @author yuanshijia
@@ -14,14 +16,24 @@ public class 滑动窗口的最大值 {
     public ArrayList<Integer> maxInWindows(int[] num, int size) {
         ArrayList<Integer> result = new ArrayList<>();
 
-        for (int i = 0; i < num.length - size; i++) {
-            
+        if (size < 1 || num.length < size) {
+            return result;
+        }
+        // 大顶堆
+        PriorityQueue<Integer> heap = new PriorityQueue<>(Comparator.reverseOrder());
+        // 维护一个大小为 size 的大顶堆
+        for (int i = 0; i < size; i++) {
+            heap.add(num[i]);
         }
 
+        result.add(heap.peek());
+        for (int i = 0, j = i + size; j < num.length; i++, j++) {
+            heap.remove(num[i]);
+            heap.add(num[j]);
+            result.add(heap.peek());
+        }
         return result;
         
     }
-    public static void main(String[] args) {
 
-    }
 }

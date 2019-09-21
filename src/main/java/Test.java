@@ -5,6 +5,8 @@
  */
 public class Test {
     public static void main(String[] args) {
+
+
         double d = 2.38 / 240;
         double t = Math.pow(d, 1.0 / 3.0);
         System.out.println(110 * t);
