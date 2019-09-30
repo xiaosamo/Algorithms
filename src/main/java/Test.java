@@ -1,3 +1,6 @@
+import java.io.Console;
+import java.util.Scanner;
+
 /**
  * @author yuan
  * @date 2019/6/23
@@ -22,5 +25,26 @@ public class Test {
 
         double d4 = Math.sqrt(5281.82);
         System.out.println(d4);
+
+
+        System.out.println();
+        test();
+    }
+
+    private static void test(){
+
+        Console console = System.console();
+        String username = console.readLine("username:");
+        char[] password = console.readPassword("pass:");
+        System.out.println(username + " " + String.valueOf(password));
+
+//        " is the"
+//        int n=
+//        1;
+//        n++;
+//        System.out.println(n);
+//        String s;
+//        int b;
+//        System.out.println(b);
     }
 }
