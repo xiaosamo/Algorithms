@@ -10,17 +10,17 @@ import java.util.Queue;
  * @date 2019/2/26
  * @description 二叉查找树
  */
-public class BST<Key extends Comparable, Value> {
+public class BST<Key extends Comparable<Key>, Value> {
 
+    // 根节点
     private Node root;
 
     private class Node{
         private Key key;
         private Value val;
         private Node left, right;
-        /**
-         * 以该节点为根的子树中的节点总数
-         */
+
+        // 以该节点为根的子树中的节点总数
         private int n;
 
         public Node(Key key, Value val, int n) {
@@ -96,7 +96,6 @@ public class BST<Key extends Comparable, Value> {
     public boolean isEmpty(){
         return size() == 0;
     }
-
 
     public Key min(){
         if (isEmpty()) {
@@ -240,13 +239,11 @@ public class BST<Key extends Comparable, Value> {
         st.put("S", 4);
         st.put("E", 1);
 
-        System.out.println();
-
         for (String s : st.keys()) {
             System.out.println(s + " " + st.get(s));
 
         }
-        System.out.println(st.size());
-        System.out.println("max=" + st.max() + ",min=" + st.min());
+        System.out.println("size = " + st.size());
+        System.out.println("max = " + st.max() + ", min = " + st.min());
     }
 }

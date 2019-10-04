@@ -19,7 +19,6 @@ public class SequentialSearchST<Key,Value> {
      */
     private int n;
 
-
     private class Node {
         Key key;
         Value value;
@@ -58,6 +57,7 @@ public class SequentialSearchST<Key,Value> {
             if (key.equals(x.key)) {
                 // 命中，更新
                 x.value = value;
+                return;
             }
         }
         // 未命中，新建节点
