@@ -1,0 +1,4 @@
+deviceId1 wifimac1 t1
+deviceId1 wifimac2 t2
+deviceId1 wifimac3 t3
+deviceId1 wifimac3 t4

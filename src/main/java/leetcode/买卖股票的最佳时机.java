@@ -31,6 +31,24 @@ public class 买卖股票的最佳时机 {
 
         return maxPrice;
     }
+    public int maxProfit3(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+        int min = Integer.MAX_VALUE;
+        int max = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            }
+            if (prices[i] - min > max) {
+                max = prices[i] -min;
+            }
+        }
+        return max;
+    }
+
+
 
 
 
@@ -40,5 +58,6 @@ public class 买卖股票的最佳时机 {
         int[] a = {7, 1, 5, 3, 6, 4};
 //        int[] b = {};
         System.out.println(obj.maxProfit(a));
+        System.out.println(obj.maxProfit3(new int[]{1, 2}));
     }
 }
