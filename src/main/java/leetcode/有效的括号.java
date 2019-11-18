@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class 有效的括号 {
     public static boolean isValid(String s) {
-        if (s.length() % 2 != 0) {
-            return false;
+        if (s.length() == 0) {
+            return true;
         }
         char[] chars = s.toCharArray();
         Stack<Character> stack = new Stack<>();
@@ -17,7 +17,6 @@ public class 有效的括号 {
                     return false;
                 }
                 Character t = stack.pop();
-
                 if (c == ')' && t != '(') {
                     return false;
                 }
@@ -27,13 +26,9 @@ public class 有效的括号 {
                 if (c == '}' && t != '{') {
                     return false;
                 }
-
             }
         }
-        if (stack.isEmpty()) {
-            return true;
-        }
-        return false;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
