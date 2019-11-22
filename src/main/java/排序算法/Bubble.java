@@ -25,10 +25,13 @@ public class Bubble {
 
     public static void sort2(Comparable []a) {
         int n = a.length;
-        for (int i = n - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
+        boolean hasChange = true;
+        for (int i = 0; i < n - 1 && hasChange; i++) {
+            hasChange = false; // 每次将hasChange置为false
+            for (int j = 0; j < n - 1 - i; j++) {
                 if (less(a[j + 1], a[j])) {
                     swap(a, j + 1, j);
+                    hasChange = true;
                 }
             }
         }

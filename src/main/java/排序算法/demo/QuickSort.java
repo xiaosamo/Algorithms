@@ -34,7 +34,6 @@ public class QuickSort {
                 --j;
             }
             while (i < j && a[i].compareTo(base) <= 0) {
-                
                 ++i;
             }
             if (i < j) {
