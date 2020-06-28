@@ -1,10 +1,8 @@
-package 排序算法;
+package 排序算法.demo;
 
-/**
- * @author yuan
- * @date 2019/2/22
- * @description
- */
+import 排序算法.Heap;
+
+
 public class Example {
 
 
@@ -23,15 +21,6 @@ public class Example {
             System.out.print(a[i] + " ");
         }
         System.out.println();
-//        System.out.println();
-
-
-//        Integer c = 3;
-//        Integer d = c;
-//        System.out.println(d);
-//        c = 5;
-//        System.out.println(d);
-
 
     }
 
@@ -66,31 +55,8 @@ public class Example {
         Heap.sort(a);
         Heap.sort(d);
 
-//        show(a);
-//        show(d);
-
-
-        byte b = -127;
-        System.out.println(b);
-        int i = b & 0xff;
-        int iB = b;
-        System.out.println(i);
-        System.out.println(iB);
-
-        System.out.println();
-        System.out.println(-4 % 3);
-        System.out.println(Math.abs(Integer.MAX_VALUE));
-
-        String h1 = "hello";
-        String h2 = "hello";
-        String h3 = new String("hello");
-        String h4 = new String("hello");
-        System.out.println(h1 == h2);
-        System.out.println(h1 == h3);
-        h1 = "java";
-
-        System.out.println(h1 == h2);
-//        System.out.println(h3 == h4);
+        show(a);
+        show(d);
 
 
 

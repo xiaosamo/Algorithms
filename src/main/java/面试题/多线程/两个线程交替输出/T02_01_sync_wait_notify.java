@@ -1,8 +1,5 @@
 package 面试题.多线程.两个线程交替输出;
 
-import edu.princeton.cs.algs4.Count;
-
-import java.util.concurrent.CountDownLatch;
 
 /**
  * @author yuan

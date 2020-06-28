@@ -2,7 +2,6 @@ package 排序算法.demo;
 
 import java.util.Arrays;
 
-import static 排序算法.Example.less;
 import static 排序算法.Example.swap;
 
 /**
